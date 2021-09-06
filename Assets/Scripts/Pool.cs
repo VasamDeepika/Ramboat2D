@@ -15,7 +15,6 @@ public class Pool : MonoBehaviour
     public List<PoolItems> items;
     public List<GameObject> pooledItems;
 
-
     private void Awake()
     {
         if (instance == null)

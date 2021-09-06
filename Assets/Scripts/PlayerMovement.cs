@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             if (grounded)
             {
@@ -30,17 +30,17 @@ public class PlayerMovement : MonoBehaviour
                 //animator.SetTrigger("Jump");
             }
         }
-        if(Input.GetKey(KeyCode.RightArrow))
+        else if(Input.GetKey(KeyCode.RightArrow))
         {
             if (grounded == true)
             {
                 playerRB.velocity = new Vector2(moveSpeed, 0);
             }
         }
-        /*else
+        else
         {
             playerRB.velocity = new Vector2(-(moveSpeed/2), 0);
-        }*/
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
