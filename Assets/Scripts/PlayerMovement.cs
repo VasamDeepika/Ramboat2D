@@ -32,8 +32,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
-            playerRB.velocity = new Vector2(moveSpeed, 0);
+            if (grounded == true)
+            {
+                playerRB.velocity = new Vector2(moveSpeed, 0);
+            }
         }
+        /*else
+        {
+            playerRB.velocity = new Vector2(-(moveSpeed/2), 0);
+        }*/
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
