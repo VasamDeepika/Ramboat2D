@@ -15,6 +15,6 @@ public class BGMovement : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        bgMat.mainTextureOffset = new Vector2(xOffset * Time.time, 0);
+        bgMat.mainTextureOffset = new Vector2(xOffset * Time.time, 0); 
     }
 }

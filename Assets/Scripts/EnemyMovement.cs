@@ -18,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = Vector2.left * speed;//flies towards left always
+        rb.velocity = Vector2.left * speed;//towards left always
 
     }
     private void OnBecameInvisible()

@@ -5,55 +5,49 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D playerRB;
-    public float jumpVelocity;
-    bool grounded = true;
-    Animator animator;
-    //public Canvas canvas;
+    public Rigidbody2D playerRB;
     [SerializeField]
-    private float moveSpeed;
+    private float jumpVelocity;
+    public bool grounded = true;
+    [SerializeField]
+    public float moveSpeed;
+    public static PlayerMovement instance;
+    public bool rightPressed = false;
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        /*if (Input.GetKey(KeyCode.UpArrow))
         {
             if (grounded)
             {
                 Jump();
-                //animator.SetTrigger("Jump");
             }
-        }
-        else if(Input.GetKey(KeyCode.RightArrow))
+        }*/
+        if(Input.GetKey(KeyCode.RightArrow))
         {
             if (grounded == true)
             {
+                rightPressed = true;
                 playerRB.velocity = new Vector2(moveSpeed, 0);
             }
         }
         else
         {
-            playerRB.velocity = new Vector2(-(moveSpeed/2), 0);
+            rightPressed = false;
+            playerRB.velocity = new Vector2(-(moveSpeed / 2), 0);
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            grounded = true;
-        }
-        if (collision.gameObject.tag == "Obstacle")
-        {
-            animator.SetTrigger("Dead");
-            //canvas.gameObject.SetActive(true);
-        }
-    }
+        
+    }   
     private void Jump()
     {
         grounded = false;
