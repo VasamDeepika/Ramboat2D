@@ -9,10 +9,12 @@ public class PlayerShooting : MonoBehaviour
     int damage = 40;
     public GameObject enemyDeathEffect;
     public GameObject bulletPrefab;
+    public int diedEnemies=0;
+    public static PlayerShooting instance;
 
-    private void Start()
+    private void Awake()
     {
-        
+        instance = this;
     }
     // Update is called once per frame
     void Update()
@@ -27,13 +29,13 @@ public class PlayerShooting : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(firePoint.position, firePoint.up);
         Instantiate(bulletPrefab, firePoint2.position, firePoint2.rotation);
         bulletPrefab.gameObject.SetActive(true);
-        print("ray shooted");
         if(hit)
         {
             var health = hit.collider.gameObject.GetComponent<Health>();
             if (health != null)
             {
                 health.TakeDamage(damage);
+                diedEnemies++;
             }
             Instantiate(enemyDeathEffect, hit.point + new Vector2(0,1), Quaternion.identity);
         } 

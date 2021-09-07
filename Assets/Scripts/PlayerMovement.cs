@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public static PlayerMovement instance;
     public bool rightPressed = false;
+
+    public bool gameSuccess = false;
+    Animator anim;
     private void Awake()
     {
         instance = this;
@@ -21,36 +24,47 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         /*if (Input.GetKey(KeyCode.UpArrow))
-        {
-            if (grounded)
             {
-                Jump();
+                if (grounded)
+                {
+                    Jump();
+                }
+            }*/
+        if (gameSuccess == false)
+        {
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                if (grounded == true)
+                {
+                    rightPressed = true;
+                    playerRB.velocity = new Vector2(moveSpeed, 0);
+                }
             }
-        }*/
-        if(Input.GetKey(KeyCode.RightArrow))
-        {
-            if (grounded == true)
+            else
             {
-                rightPressed = true;
-                playerRB.velocity = new Vector2(moveSpeed, 0);
+                rightPressed = false;
+                playerRB.velocity = new Vector2(-(moveSpeed / 2), 0);
             }
         }
-        else
-        {
-            rightPressed = false;
-            playerRB.velocity = new Vector2(-(moveSpeed / 2), 0);
-        }
-        
     }   
     private void Jump()
     {
         grounded = false;
         playerRB.velocity = new Vector2(0, jumpVelocity);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Flag")
+        {
+            gameSuccess = true;
+            anim.SetTrigger("Win");
+        }
     }
 }

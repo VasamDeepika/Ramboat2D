@@ -160,3 +160,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 1
   currentHealth: 0
+  enemiesDied: 0
+  enemyCountText: {fileID: 0}

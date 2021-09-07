@@ -9,21 +9,23 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            time += Time.deltaTime;
-        if (Random.Range(0, 100) < 5)
+        time += Time.deltaTime;
+        if (PlayerMovement.instance.gameSuccess == false)
         {
-            GameObject en = Pool.instance.Get("Enemy");
-            if (en != null)
+            if (Random.Range(0, 100) < 5)
             {
-                en.transform.position = this.transform.position + new Vector3(8, Random.Range(0f, 1f), 0);
-                if (time > 2f) // 2 seconds of time gap between each enemy
+                GameObject en = Pool.instance.Get("Enemy");
+                if (en != null)
                 {
-                    time = 0;
-                    en.SetActive(true);
+                    en.transform.position = this.transform.position + new Vector3(8, Random.Range(0f, 1f), 0);
+                    if (time > 2f) // 2 seconds of time gap between each enemy
+                    {
+                        time = 0;
+                        en.SetActive(true);
+                    }
                 }
             }
         }
-        
     }
     
 }

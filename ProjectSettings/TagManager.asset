@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - DeathEffect
   - Bullet
+  - Flag
   layers:
   - Default
   - TransparentFX
