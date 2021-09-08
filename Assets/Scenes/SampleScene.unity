@@ -312,6 +312,8 @@ MonoBehaviour:
   firePoint2: {fileID: 1433044799}
   enemyDeathEffect: {fileID: 2189548851167839881, guid: 6938760102c4c834eb03b77be6bab476, type: 3}
   bulletPrefab: {fileID: 2659424284033365257, guid: 892584d40b53167469ef3a084ca0eb44, type: 3}
+  diedEnemies: 0
+  coinPrefab: {fileID: 948169003252771192, guid: 956249004a99d2544b949e577b3e6628, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +397,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &524782239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524782241}
+  - component: {fileID: 524782240}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &524782240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524782239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98dc9fdb23b517544ab998a093882f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCountText: {fileID: 1153956451}
+--- !u!4 &524782241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524782239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.85126567, y: 0.012107341, z: -0.14804308}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &717500201
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +453,7 @@ GameObject:
   - component: {fileID: 717500202}
   m_Layer: 0
   m_Name: RightBorder
-  m_TagString: Untagged
+  m_TagString: RightBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -895,7 +941,7 @@ GameObject:
   - component: {fileID: 1053819717}
   m_Layer: 0
   m_Name: BackGround
-  m_TagString: Untagged
+  m_TagString: BackGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1245,7 +1291,7 @@ GameObject:
   - component: {fileID: 1394435204}
   m_Layer: 0
   m_Name: LeftBorder
-  m_TagString: Untagged
+  m_TagString: LeftBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1387,7 +1433,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1772318147}
   - component: {fileID: 1772318148}
-  - component: {fileID: 1772318149}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -1421,19 +1466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48bbf7f2f93ed54c810e69b0b01ab4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1772318149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772318146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98dc9fdb23b517544ab998a093882f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyCountText: {fileID: 1153956451}
 --- !u!1 &1925954730
 GameObject:
   m_ObjectHideFlags: 0

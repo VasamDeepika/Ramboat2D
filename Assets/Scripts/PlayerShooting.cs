@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject bulletPrefab;
     public int diedEnemies=0;
     public static PlayerShooting instance;
+    public GameObject coinPrefab;
 
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class PlayerShooting : MonoBehaviour
                 diedEnemies++;
             }
             Instantiate(enemyDeathEffect, hit.point + new Vector2(0,1), Quaternion.identity);
+            Instantiate(coinPrefab, hit.point, Quaternion.identity);
         } 
     }
 }

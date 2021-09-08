@@ -9,6 +9,10 @@ TagManager:
   - DeathEffect
   - Bullet
   - Flag
+  - Coin
+  - BackGround
+  - RightBorder
+  - LeftBorder
   layers:
   - Default
   - TransparentFX

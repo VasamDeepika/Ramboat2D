@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EnemyCountManager : MonoBehaviour
 {
     public Text enemyCountText;
+    public Text coinCountText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +17,6 @@ public class EnemyCountManager : MonoBehaviour
     void Update()
     {
         enemyCountText.text = PlayerShooting.instance.diedEnemies.ToString();
+        enemyCountText.text = CoinMovement.instance.coinCount.ToString();
     }
 }

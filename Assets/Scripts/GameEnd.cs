@@ -22,7 +22,7 @@ public class GameEnd : MonoBehaviour
     void Update()
     {
         timer = timer + Time.deltaTime;
-        if(timer>10.0f)
+        if(timer>200.0f)
         {
             flag.gameObject.SetActive(true);
         }
