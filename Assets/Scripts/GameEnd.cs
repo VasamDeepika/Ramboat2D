@@ -8,6 +8,7 @@ public class GameEnd : MonoBehaviour
     public GameObject flag;
     public static GameEnd instance;
     Animator anim;
+    public bool flagCame = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,10 +23,10 @@ public class GameEnd : MonoBehaviour
     void Update()
     {
         timer = timer + Time.deltaTime;
-        print(timer);
-        if(timer>100.0f)
+        if(timer>50.0f)
         {
             flag.gameObject.SetActive(true);
+            flagCame = true;
         }
     }
 }

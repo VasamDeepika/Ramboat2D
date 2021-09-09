@@ -136,3 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   bombFailEffect: {fileID: 7049924411493227337, guid: 9b0d13351d3028c4d80f5c8a5ae70abe, type: 3}
+  healthSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

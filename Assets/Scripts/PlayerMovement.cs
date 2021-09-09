@@ -8,14 +8,15 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRB;
     [SerializeField]
     private float jumpVelocity;
-    public bool grounded = true;
+    private bool grounded = true;
     [SerializeField]
-    public float moveSpeed;
+    private float moveSpeed;
     public static PlayerMovement instance;
-    public bool rightPressed = false;
+    private bool rightPressed = false;
 
     public bool gameSuccess = false;
     Animator anim;
+    public GameObject levelDialogBox;
     private void Awake()
     {
         instance = this;
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
                     Jump();
                 }
             }*/
+        
         if (gameSuccess == false && Health.instance.isGameOver == false)
         {
             if (Input.GetKey(KeyCode.RightArrow))
@@ -64,7 +66,9 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Flag")
         {
             gameSuccess = true;
+            PlayerShooting.instance.stars++;
             anim.SetTrigger("Win");
+            levelDialogBox.SetActive(true);
         }
     }
 }

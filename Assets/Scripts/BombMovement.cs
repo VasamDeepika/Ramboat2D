@@ -36,12 +36,12 @@ public class BombMovement : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Instantiate(bombFailEffect, transform.position + new Vector3(0,-1,0), Quaternion.identity);
+            Destroy(gameObject);
             var health = collision.gameObject.GetComponent<Health>();
             if (health != null)
             {
                 health.TakeDamage(damage);
             }
-            Destroy(gameObject); 
         }
         if (collision.gameObject.tag == "LeftBorder")
         {

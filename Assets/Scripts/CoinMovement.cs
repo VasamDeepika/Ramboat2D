@@ -10,9 +10,7 @@ public class CoinMovement : MonoBehaviour
     bool hitGround = false;
     Rigidbody2D rb;
     
-    public bool hitCoin = false;
     public static CoinMovement instance;
-    //public Text coinCountText;
     private void Awake()
     {
         instance = this;
@@ -39,6 +37,10 @@ public class CoinMovement : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             UIManager.instance.coinCount++;
+            if(UIManager.instance.coinCount==5)
+            {
+                PlayerShooting.instance.stars++;
+            }
             Destroy(this.gameObject);
         }
         if(collision.gameObject.tag == "LeftBorder")

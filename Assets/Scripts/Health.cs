@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField]
     int startHealth = 5;
     [SerializeField]
-    int currentHealth;
+    public int currentHealth;
     public static Health instance;
     Animator anim;
     public bool isGameOver = false;
@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            
         }
     }
     private void Die()

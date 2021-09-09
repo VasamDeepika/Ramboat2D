@@ -12,14 +12,14 @@ public class SpawnManager : MonoBehaviour
     {
         time += Time.deltaTime;
         heliTimer += Time.deltaTime;
-        if (PlayerMovement.instance.gameSuccess == false && Health.instance.isGameOver == false)
+        if (PlayerMovement.instance.gameSuccess == false && Health.instance.isGameOver == false && GameEnd.instance.flagCame==false)
         {
             if (Random.Range(0, 100) < 5)
             {
                 GameObject en = Pool.instance.Get("Enemy");
                 if (en != null)
                 {
-                    en.transform.position = this.transform.position + new Vector3(8, Random.Range(0f, 1f), 0);
+                    en.transform.position = new Vector3(8, Random.Range(1.2f, 4f), 0);
                     if (time > 2f) // 2 seconds of time gap between each enemy
                     {
                         time = 0;
@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
                 GameObject helicoptor = Pool.instance.Get("Helicopter");
                 if (helicoptor != null)
                 {
-                    helicoptor.transform.position = this.transform.position + new Vector3(8, Random.Range(0f, 1f), 0);
+                    helicoptor.transform.position = this.transform.position;
                     if (heliTimer > 10f) 
                     {
                         heliTimer = 0;

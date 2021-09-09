@@ -22,7 +22,13 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyCountText.text = PlayerShooting.instance.diedEnemies.ToString();
-        coinCountText.text = coinCount.ToString();
+        while (PlayerShooting.instance.diedEnemies <= 20)
+        {
+            enemyCountText.text = PlayerShooting.instance.diedEnemies.ToString();
+        }
+        while (coinCount <= 5)
+        {
+            coinCountText.text = coinCount.ToString();
+        }
     }
 }

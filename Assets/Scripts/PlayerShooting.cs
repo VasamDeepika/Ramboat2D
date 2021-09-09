@@ -8,11 +8,13 @@ public class PlayerShooting : MonoBehaviour
     public Transform firePoint;
     public Transform firePoint2;
     int damage = 1;
+    public int stars = 0;
+    public int diedEnemies = 0;
     public GameObject enemyDeathEffect;
     public GameObject bulletPrefab;
-    public int diedEnemies=0;
-    public static PlayerShooting instance;
+    
     public GameObject coinPrefab;
+    public static PlayerShooting instance;
 
     private void Awake()
     {
@@ -21,7 +23,7 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
@@ -38,6 +40,10 @@ public class PlayerShooting : MonoBehaviour
             {
                 health.TakeDamage(damage);
                 diedEnemies++;
+                if(diedEnemies==20)
+                {
+                    stars++;
+                }
                 Instantiate(enemyDeathEffect, hit.point + new Vector2(0, 1), Quaternion.identity);
                 Instantiate(coinPrefab, hit.point, Quaternion.identity);
             }
