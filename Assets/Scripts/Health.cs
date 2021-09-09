@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     [SerializeField]
     int currentHealth;
     public static Health instance;
+    Animator anim;
+    public bool isGameOver = false;
    
     private void OnEnable()
     {
@@ -18,6 +20,10 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
     }
     public void TakeDamage(int damageAmount)
     {
@@ -29,6 +35,14 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        gameObject.SetActive(false);
+        if(gameObject.tag == "Player")
+        {
+            anim.SetTrigger("Dead");
+            isGameOver = true;
+        }
+        if(gameObject.tag == "Enemy")
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

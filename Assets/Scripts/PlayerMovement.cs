@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D playerRB;
+    Rigidbody2D playerRB;
     [SerializeField]
     private float jumpVelocity;
     public bool grounded = true;
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
                     Jump();
                 }
             }*/
-        if (gameSuccess == false)
+        if (gameSuccess == false && Health.instance.isGameOver == false)
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 rightPressed = false;
-                playerRB.velocity = new Vector2(-(moveSpeed / 2), 0);
+                playerRB.velocity = new Vector2(-(moveSpeed / 4), 0);
             }
         }
     }   

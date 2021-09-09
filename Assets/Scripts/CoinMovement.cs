@@ -9,15 +9,13 @@ public class CoinMovement : MonoBehaviour
     private float speed = 5;
     bool hitGround = false;
     Rigidbody2D rb;
-    int coinCount = 0;
+    
+    public bool hitCoin = false;
     public static CoinMovement instance;
+    //public Text coinCountText;
     private void Awake()
     {
         instance = this;
-    }
-    private void OnBecameVisible()
-    {
-        GetComponent<BoxCollider2D>().isTrigger = false;
     }
     void Start()
     {
@@ -37,11 +35,10 @@ public class CoinMovement : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             hitGround = true;
-            
         }
         if(collision.gameObject.tag == "Player")
         {
-            coinCount++;
+            UIManager.instance.coinCount++;
             Destroy(this.gameObject);
         }
         if(collision.gameObject.tag == "LeftBorder")

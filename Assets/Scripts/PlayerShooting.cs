@@ -7,7 +7,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public Transform firePoint;
     public Transform firePoint2;
-    int damage = 40;
+    int damage = 1;
     public GameObject enemyDeathEffect;
     public GameObject bulletPrefab;
     public int diedEnemies=0;
@@ -38,9 +38,9 @@ public class PlayerShooting : MonoBehaviour
             {
                 health.TakeDamage(damage);
                 diedEnemies++;
+                Instantiate(enemyDeathEffect, hit.point + new Vector2(0, 1), Quaternion.identity);
+                Instantiate(coinPrefab, hit.point, Quaternion.identity);
             }
-            Instantiate(enemyDeathEffect, hit.point + new Vector2(0,1), Quaternion.identity);
-            Instantiate(coinPrefab, hit.point, Quaternion.identity);
         } 
     }
 }

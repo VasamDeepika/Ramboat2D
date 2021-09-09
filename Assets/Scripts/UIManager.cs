@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyCountManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public Text enemyCountText;
     public Text coinCountText;
+    public int coinCount = 0;
+    public static UIManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +23,6 @@ public class EnemyCountManager : MonoBehaviour
     void Update()
     {
         enemyCountText.text = PlayerShooting.instance.diedEnemies.ToString();
-        enemyCountText.text = CoinMovement.instance.coinCount.ToString();
+        coinCountText.text = coinCount.ToString();
     }
 }

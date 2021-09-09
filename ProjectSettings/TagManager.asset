@@ -13,6 +13,8 @@ TagManager:
   - BackGround
   - RightBorder
   - LeftBorder
+  - Helicopter
+  - Bomb
   layers:
   - Default
   - TransparentFX
