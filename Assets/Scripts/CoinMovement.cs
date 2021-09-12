@@ -41,6 +41,7 @@ public class CoinMovement : MonoBehaviour
             {
                 PlayerShooting.instance.stars++;
             }
+            FindObjectOfType<AudioManager>().PlayAudio("CoinCollision");
             Destroy(this.gameObject);
         }
         if(collision.gameObject.tag == "LeftBorder")

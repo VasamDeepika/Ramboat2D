@@ -10,30 +10,34 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        heliTimer += Time.deltaTime;
-        if (PlayerMovement.instance.gameSuccess == false && Health.instance.isGameOver == false && GameEnd.instance.flagCame==false)
+        if (PlayerMovement.instance.gameSuccess == false && GameEnd.instance.flagCame == false)
         {
-            if (Random.Range(0, 100) < 5)
+            if (Health.instance.isGameOver == false)
             {
-                GameObject en = Pool.instance.Get("Enemy");
-                if (en != null)
+                time += Time.deltaTime;
+                heliTimer += Time.deltaTime;
+
+                if (Random.Range(0, 100) < 5)
                 {
-                    en.transform.position = new Vector3(8, Random.Range(1.2f, 4f), 0);
-                    if (time > 2f) // 2 seconds of time gap between each enemy
+                    GameObject en = Pool.instance.Get("Enemy");
+                    if (en != null)
                     {
-                        time = 0;
-                        en.SetActive(true);
+                        en.transform.position = new Vector3(8, Random.Range(1.2f, 4f), 0);
+                        if (time > 1f) // 2 seconds of time gap between each enemy
+                        {
+                            time = 0;
+                            en.SetActive(true);
+                        }
                     }
-                }
-                GameObject helicoptor = Pool.instance.Get("Helicopter");
-                if (helicoptor != null)
-                {
-                    helicoptor.transform.position = this.transform.position;
-                    if (heliTimer > 10f) 
+                    GameObject helicoptor = Pool.instance.Get("Helicopter");
+                    if (helicoptor != null)
                     {
-                        heliTimer = 0;
-                        helicoptor.SetActive(true);
+                        helicoptor.transform.position = this.transform.position;
+                        if (heliTimer > 5f)
+                        {
+                            heliTimer = 0;
+                            helicoptor.SetActive(true);
+                        }
                     }
                 }
             }

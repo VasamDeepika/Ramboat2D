@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -22,12 +23,9 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (PlayerShooting.instance.diedEnemies <= 20)
+        if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             enemyCountText.text = PlayerShooting.instance.diedEnemies.ToString();
-        }
-        while (coinCount <= 5)
-        {
             coinCountText.text = coinCount.ToString();
         }
     }

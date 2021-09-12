@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     int startHealth = 5;
     [SerializeField]
     public int currentHealth;
-    public static Health instance;
+    public static EnemyHealth instance;
     Animator anim;
     public bool isGameOver = false;
-    public GameObject gameOverPanel;
     public GameObject playerdeathEffect;
     private void OnEnable()
     {
@@ -32,21 +31,12 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            
+
         }
     }
     private void Die()
     {
-        if(gameObject.tag == "Player")
-        {
-            isGameOver = true;
-            playerdeathEffect.SetActive(true);
-            FindObjectOfType<AudioManager>().PlayAudio("PlayerDeath");
-            anim.SetTrigger("Dead");
-            
-            gameOverPanel.SetActive(true);
-        }
-        if(gameObject.tag == "Enemy")
+        if (gameObject.tag == "Enemy" || gameObject.tag == "Helicopter")
         {
             gameObject.SetActive(false);
         }

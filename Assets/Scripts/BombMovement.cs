@@ -12,6 +12,7 @@ public class BombMovement : MonoBehaviour
     int damage=1;
     public static BombMovement instance;
     public GameObject bombFailEffect;
+    public bool isGameOver = false;
     private void Awake()
     {
         instance = this;
@@ -32,15 +33,22 @@ public class BombMovement : MonoBehaviour
             hitGround = true;
             Instantiate(bombFailEffect, transform.position + new Vector3(0, -1, 0), Quaternion.identity);
             Destroy(this.gameObject);
+            FindObjectOfType<AudioManager>().PlayAudio("FailExplosion");
         }
         if (collision.gameObject.tag == "Player")
         {
             Instantiate(bombFailEffect, transform.position + new Vector3(0,-1,0), Quaternion.identity);
+            FindObjectOfType<AudioManager>().PlayAudio("FailExplosion");
             Destroy(gameObject);
+
             var health = collision.gameObject.GetComponent<Health>();
             if (health != null)
             {
                 health.TakeDamage(damage);
+            }
+            if(health.currentHealth<=0)
+            {
+                Health.instance.isGameOver = true;
             }
         }
         if (collision.gameObject.tag == "LeftBorder")

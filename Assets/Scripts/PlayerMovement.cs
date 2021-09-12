@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -66,7 +67,28 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Flag")
         {
             gameSuccess = true;
-            PlayerShooting.instance.stars++;
+            
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                PlayerShooting.instance.stars++;
+                Kill20Enemies.instance.Kill20enemies();
+                Coins.instance.CoinCount();
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 4)
+            {
+                PlayerShooting.instance.stars = 2;
+                PlayerShooting.instance.stars++;
+                if (KillAllEnemies.instance.isAllEnemiesKilled == false)
+                {
+                    PlayerShooting.instance.stars--;
+                }
+                if (Health.instance.currentHealth < 3)
+                {
+                    PlayerShooting.instance.stars--;
+                }
+
+                print(PlayerShooting.instance.stars);
+            }
             anim.SetTrigger("Win");
             levelDialogBox.SetActive(true);
         }

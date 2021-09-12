@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1364793751218201215
+--- !u!1 &749602949560585603
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1364793751218201213}
-  - component: {fileID: 1364793751218201214}
-  - component: {fileID: 4153625122136595118}
-  - component: {fileID: -5321211117498420173}
-  - component: {fileID: 1668462731529589930}
-  - component: {fileID: -6563316136404526833}
+  - component: {fileID: 8570276775960613121}
+  - component: {fileID: 4270361884266775996}
+  - component: {fileID: 3249603323400819770}
+  - component: {fileID: 5306060531638599261}
+  - component: {fileID: 3725414348905384724}
+  - component: {fileID: 7283896169493195024}
+  - component: {fileID: 6541131388114143920}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -21,13 +22,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1364793751218201213
+--- !u!4 &8570276775960613121
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364793751218201215}
+  m_GameObject: {fileID: 749602949560585603}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 8.18, y: 3.59, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
@@ -35,13 +36,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!212 &1364793751218201214
+--- !u!212 &4270361884266775996
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364793751218201215}
+  m_GameObject: {fileID: 749602949560585603}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -86,13 +87,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4153625122136595118
+--- !u!61 &3249603323400819770
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364793751218201215}
+  m_GameObject: {fileID: 749602949560585603}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -112,14 +113,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7256784, y: 4.760871}
   m_EdgeRadius: 0
---- !u!50 &-5321211117498420173
+--- !u!50 &5306060531638599261
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364793751218201215}
+  m_GameObject: {fileID: 749602949560585603}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -133,32 +134,46 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1668462731529589930
+--- !u!114 &3725414348905384724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364793751218201215}
+  m_GameObject: {fileID: 749602949560585603}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 197f20018dbdd3b48b1c9b03e5108926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!114 &-6563316136404526833
+--- !u!114 &7283896169493195024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364793751218201215}
+  m_GameObject: {fileID: 749602949560585603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d91216294ec5547a2fc2ea81c932f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 232ee295622a8ee43ae2c7c7d571a9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAllEnemiesKilled: 1
+  WrongMark: {fileID: 0}
+--- !u!114 &6541131388114143920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749602949560585603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfc4c8423b67f14fb8695584bc87fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 1
   currentHealth: 0
-  enemiesDied: 0
-  enemyCountText: {fileID: 0}
+  isGameOver: 0
+  playerdeathEffect: {fileID: 5489635335849643263, guid: 9e46102c9c7df624fa523cbedfd94f0f, type: 3}

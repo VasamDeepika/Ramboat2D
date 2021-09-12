@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Health.instance.isGameOver == false)
         {
             Shoot();
         }
@@ -32,20 +33,20 @@ public class PlayerShooting : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(firePoint.position, firePoint.up);
         Instantiate(bulletPrefab, firePoint2.position, firePoint2.rotation);
+        FindObjectOfType<AudioManager>().PlayAudio("Shoot");
         bulletPrefab.gameObject.SetActive(true);
         if(hit)
         {
-            var health = hit.collider.gameObject.GetComponent<Health>();
+            var health = hit.collider.gameObject.GetComponent<EnemyHealth>();
             if (health != null)
             {
                 health.TakeDamage(damage);
-                diedEnemies++;
-                if(diedEnemies==20)
-                {
-                    stars++;
-                }
+                
                 Instantiate(enemyDeathEffect, hit.point + new Vector2(0, 1), Quaternion.identity);
-                Instantiate(coinPrefab, hit.point, Quaternion.identity);
+                if (health.gameObject.tag == "Enemy")
+                {
+                    Instantiate(coinPrefab, hit.point, Quaternion.identity);
+                }
             }
         } 
     }
