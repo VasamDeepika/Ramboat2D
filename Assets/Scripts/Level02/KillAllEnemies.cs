@@ -26,7 +26,6 @@ public class KillAllEnemies : MonoBehaviour
     {
         if(collision.gameObject.tag=="LeftBorder")
         {
-            print("LeftBorder");
             isAllEnemiesKilled = false;
         }
     }

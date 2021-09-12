@@ -182,4 +182,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  hitCoin: 0
+  coinEffect: {fileID: 1988642351379850445, guid: 598caa4edda86ca4ca6c0e80c0406fa1, type: 3}

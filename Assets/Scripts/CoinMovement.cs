@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CoinMovement : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class CoinMovement : MonoBehaviour
     private float speed = 5;
     bool hitGround = false;
     Rigidbody2D rb;
-    
+    public GameObject coinEffect;
     public static CoinMovement instance;
     private void Awake()
     {
@@ -36,10 +37,14 @@ public class CoinMovement : MonoBehaviour
         }
         if(collision.gameObject.tag == "Player")
         {
+            Instantiate(coinEffect, transform.position, Quaternion.identity);
             UIManager.instance.coinCount++;
             if(UIManager.instance.coinCount==5)
             {
-                PlayerShooting.instance.stars++;
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                {
+                    PlayerShooting.instance.stars++;
+                }
             }
             FindObjectOfType<AudioManager>().PlayAudio("CoinCollision");
             Destroy(this.gameObject);

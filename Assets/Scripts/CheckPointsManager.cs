@@ -26,13 +26,16 @@ public class CheckPointsManager : MonoBehaviour
                 checkPoints[0].SetActive(true);
             }
         }
-        if(KillAllEnemies.instance.isAllEnemiesKilled == false)
+        if (SceneManager.GetActiveScene().buildIndex == 4)
         {
-            checkPoints[2].SetActive(true);
-        }
-        if(Health.instance.currentHealth<3)
-        {
-            checkPoints[3].SetActive(true);
+            if (KillAllEnemies.instance.isAllEnemiesKilled == false)
+            {
+                checkPoints[2].SetActive(true);
+            }
+            if (Health.instance.currentHealth < 3)
+            {
+                checkPoints[3].SetActive(true);
+            }
         }
     }
 }

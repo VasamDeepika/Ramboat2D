@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     private float time;
     private float heliTimer;
+    private float timerRun;
 
     // Update is called once per frame
     void Update()
@@ -16,6 +17,7 @@ public class SpawnManager : MonoBehaviour
             {
                 time += Time.deltaTime;
                 heliTimer += Time.deltaTime;
+                timerRun += Time.deltaTime;
 
                 if (Random.Range(0, 100) < 5)
                 {
@@ -23,10 +25,20 @@ public class SpawnManager : MonoBehaviour
                     if (en != null)
                     {
                         en.transform.position = new Vector3(8, Random.Range(1.2f, 4f), 0);
-                        if (time > 1f) // 2 seconds of time gap between each enemy
+                        if (time > 1f) // 1 second of time gap between each enemy
                         {
                             time = 0;
                             en.SetActive(true);
+                        }
+                    }
+                    GameObject enRun = Pool.instance.Get("RunningEnemy");
+                    if (enRun != null)
+                    {
+                        enRun.transform.position = new Vector3(8,2.2f, 0);
+                        if (timerRun > 2f) // 2 seconds of time gap between each enemy
+                        {
+                            timerRun = 0;
+                            enRun.SetActive(true);
                         }
                     }
                     GameObject helicoptor = Pool.instance.Get("Helicopter");

@@ -13,8 +13,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
     public static PlayerMovement instance;
-    private bool rightPressed = false;
-
     public bool gameSuccess = false;
     Animator anim;
     public GameObject levelDialogBox;
@@ -46,13 +44,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (grounded == true)
                 {
-                    rightPressed = true;
                     playerRB.velocity = new Vector2(moveSpeed, 0);
                 }
             }
             else
             {
-                rightPressed = false;
                 playerRB.velocity = new Vector2(-(moveSpeed / 4), 0);
             }
         }
@@ -71,8 +67,6 @@ public class PlayerMovement : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex == 3)
             {
                 PlayerShooting.instance.stars++;
-                Kill20Enemies.instance.Kill20enemies();
-                Coins.instance.CoinCount();
             }
             else if (SceneManager.GetActiveScene().buildIndex == 4)
             {
@@ -86,8 +80,6 @@ public class PlayerMovement : MonoBehaviour
                 {
                     PlayerShooting.instance.stars--;
                 }
-
-                print(PlayerShooting.instance.stars);
             }
             anim.SetTrigger("Win");
             levelDialogBox.SetActive(true);

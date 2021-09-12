@@ -119,9 +119,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1123807, y: -1.0150887}
+  m_Offset: {x: -0.11238074, y: -1.2576885}
   serializedVersion: 2
-  m_Radius: 0.8967361
+  m_Radius: 1.1393359
 --- !u!114 &3395792804975695818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   bombFailEffect: {fileID: 7049924411493227337, guid: 9b0d13351d3028c4d80f5c8a5ae70abe, type: 3}
-  healthSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  isGameOver: 0

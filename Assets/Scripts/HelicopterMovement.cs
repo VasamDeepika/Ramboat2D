@@ -6,7 +6,8 @@ public class HelicopterMovement : MonoBehaviour
 {
     // Movement speed
     public float speed = 5;
-    private float timer;
+    private float time;
+    public float timer;
     public GameObject bombPrefab;
     Rigidbody2D rb;
 
@@ -18,12 +19,12 @@ public class HelicopterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        time += Time.deltaTime;
         rb.velocity = Vector2.left * speed;//towards left always
-        if(timer>=2f)
+        if(time>=timer)
         {
             Instantiate(bombPrefab, transform.position+ new Vector3(-1, 0, 0), Quaternion.identity);
-            timer = 0;
+            time = 0;
         }
     }
     private void OnBecameInvisible()

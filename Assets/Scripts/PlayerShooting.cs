@@ -45,6 +45,11 @@ public class PlayerShooting : MonoBehaviour
                 Instantiate(enemyDeathEffect, hit.point + new Vector2(0, 1), Quaternion.identity);
                 if (health.gameObject.tag == "Enemy")
                 {
+                    diedEnemies++;
+                    if(diedEnemies==20 && SceneManager.GetActiveScene().buildIndex == 3) 
+                    {
+                        stars++;
+                    }
                     Instantiate(coinPrefab, hit.point, Quaternion.identity);
                 }
             }

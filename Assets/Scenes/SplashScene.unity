@@ -357,6 +357,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeInTime: 1
+--- !u!1 &546622103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546622105}
+  - component: {fileID: 546622104}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &546622104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546622103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4daddad7d52eeec4597c97dd02be2057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioName: CoinCollision
+    audioClip: {fileID: 8300000, guid: d996adbe8cd071b42b19868b3455143e, type: 3}
+    volume: 0.564
+    pitch: 0.573
+    audioSource: {fileID: 0}
+    audioLoop: 0
+  - audioName: PlayerDeath
+    audioClip: {fileID: 8300000, guid: a56393ccfb6439748bc8f361ee05d7e7, type: 3}
+    volume: 0.564
+    pitch: 0.573
+    audioSource: {fileID: 0}
+    audioLoop: 0
+  - audioName: FailExplosion
+    audioClip: {fileID: 8300000, guid: 9ad60635a943c3a45a2315e989ee7cde, type: 3}
+    volume: 0.564
+    pitch: 0.573
+    audioSource: {fileID: 0}
+    audioLoop: 0
+  - audioName: Shoot
+    audioClip: {fileID: 8300000, guid: 4d49e63ef3ccd5d43820ecd206179970, type: 3}
+    volume: 0.564
+    pitch: 0.573
+    audioSource: {fileID: 0}
+    audioLoop: 0
+  - audioName: BackGround
+    audioClip: {fileID: 8300000, guid: 6dee29f5c5fd00f4194ddc6b3df1b950, type: 3}
+    volume: 0.564
+    pitch: 0.573
+    audioSource: {fileID: 0}
+    audioLoop: 0
+--- !u!4 &546622105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546622103}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.31, y: -2.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1096585630
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +538,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401147278
 GameObject:
@@ -623,54 +697,4 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1980255022
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1980255024}
-  - component: {fileID: 1980255023}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1980255023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980255022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4daddad7d52eeec4597c97dd02be2057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - audioName: BackGround
-    audioClip: {fileID: 8300000, guid: 6dee29f5c5fd00f4194ddc6b3df1b950, type: 3}
-    volume: 0.564
-    pitch: 0.573
-    audioSource: {fileID: 0}
-    audioLoop: 1
---- !u!4 &1980255024
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980255022}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 182.29321, y: 59.863823, z: -9.177401}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -25,8 +25,14 @@ public class UIManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 3)
         {
-            enemyCountText.text = PlayerShooting.instance.diedEnemies.ToString();
-            coinCountText.text = coinCount.ToString();
+            if (PlayerShooting.instance.diedEnemies <= 20)
+            {
+                enemyCountText.text = PlayerShooting.instance.diedEnemies.ToString();
+            }
+            if (coinCount <= 5)
+            {
+                coinCountText.text = coinCount.ToString();
+            }
         }
     }
 }

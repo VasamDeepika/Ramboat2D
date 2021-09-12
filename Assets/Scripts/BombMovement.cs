@@ -6,8 +6,6 @@ public class BombMovement : MonoBehaviour
 {
     // Movement speed
     [SerializeField]
-    private float speed = 5;
-    bool hitGround = false;
     Rigidbody2D rb;
     int damage=1;
     public static BombMovement instance;
@@ -30,7 +28,6 @@ public class BombMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            hitGround = true;
             Instantiate(bombFailEffect, transform.position + new Vector3(0, -1, 0), Quaternion.identity);
             Destroy(this.gameObject);
             FindObjectOfType<AudioManager>().PlayAudio("FailExplosion");

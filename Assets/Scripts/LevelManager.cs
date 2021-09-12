@@ -9,6 +9,13 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void NextLevel()
+    {
+        if(PlayerMovement.instance.gameSuccess == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
     public void LoadLevel(string name)
     {
         SceneManager.LoadScene(name);

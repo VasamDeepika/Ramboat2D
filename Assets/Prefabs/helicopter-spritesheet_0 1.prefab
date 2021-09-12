@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 7407573320392980967}
   - component: {fileID: 9163176274231590318}
   - component: {fileID: 6265688617360050593}
-  - component: {fileID: -5661952890866493215}
   m_Layer: 0
-  m_Name: helicopter-spritesheet_0
+  m_Name: helicopter-spritesheet_0 1
   m_TagString: Helicopter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,21 +165,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  timer: 2
+  timer: 1
   bombPrefab: {fileID: 7147319467123453213, guid: 02b0524a28a0e0242b7ce7619aad744f, type: 3}
---- !u!114 &-5661952890866493215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8464737832375177024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dfc4c8423b67f14fb8695584bc87fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startHealth: 3
-  currentHealth: 0
-  isGameOver: 0
-  playerdeathEffect: {fileID: 5489635335849643263, guid: 9e46102c9c7df624fa523cbedfd94f0f, type: 3}
