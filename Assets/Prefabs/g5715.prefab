@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf548bd136a50274bb642afca2653b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  damage: 1
   bombFailEffect: {fileID: 7049924411493227337, guid: 9b0d13351d3028c4d80f5c8a5ae70abe, type: 3}
+  bombFailEffect1: {fileID: 5535620116376897639, guid: 2cdfea631f65d3b4cb3b0483598fa29a, type: 3}
   isGameOver: 0

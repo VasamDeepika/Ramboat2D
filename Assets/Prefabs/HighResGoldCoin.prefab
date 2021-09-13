@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   coinEffect: {fileID: 2609805070943501218, guid: 5a18a3437981cf94795cb40c0e78bcde, type: 3}
+  coinEffect2: {fileID: 6501050790554060757, guid: 4b4e44450723db0469751c89b28b04d6, type: 3}
 --- !u!1001 &6279166723918077778
 PrefabInstance:
   m_ObjectHideFlags: 0

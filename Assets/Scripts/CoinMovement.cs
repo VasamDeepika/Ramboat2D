@@ -12,6 +12,8 @@ public class CoinMovement : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField]
     private GameObject coinEffect;
+    [SerializeField]
+    private GameObject coinEffect2;
     public static CoinMovement instance;
     private void Awake()
     {
@@ -34,6 +36,7 @@ public class CoinMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
         {
+            Instantiate(coinEffect2, transform.position, Quaternion.identity);
             hitGround = true;
         }
         if(collision.gameObject.tag == "Player")

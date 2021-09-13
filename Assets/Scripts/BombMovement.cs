@@ -10,6 +10,8 @@ public class BombMovement : MonoBehaviour
     public static BombMovement instance;
     [SerializeField]
     private GameObject bombFailEffect;
+    [SerializeField]
+    private GameObject bombFailEffect1;
     public bool isGameOver = false;
     Rigidbody2D rb;
     private void Awake()
@@ -35,7 +37,7 @@ public class BombMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player")
         {
-            Instantiate(bombFailEffect, transform.position + new Vector3(0,-1,0), Quaternion.identity);
+            Instantiate(bombFailEffect1, transform.position + new Vector3(0,-1,0), Quaternion.identity);
             FindObjectOfType<AudioManager>().PlayAudio("FailExplosion");
             Destroy(gameObject);
 
@@ -47,6 +49,7 @@ public class BombMovement : MonoBehaviour
             if(health.currentHealth<=0)
             {
                 Health.instance.isGameOver = true;
+                
             }
         }
         if (collision.gameObject.tag == "LeftBorder")
