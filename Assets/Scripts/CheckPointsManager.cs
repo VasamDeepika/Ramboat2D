@@ -22,7 +22,7 @@ public class CheckPointsManager : MonoBehaviour
             {
                 checkPoints[1].SetActive(true);
             }
-            if (PlayerShooting.instance.diedEnemies == 20)
+            if (PlayerShooting.instance.diedEnemies == PlayerShooting.instance.reqDiedEnemies)
             {
                 checkPoints[0].SetActive(true);
             }

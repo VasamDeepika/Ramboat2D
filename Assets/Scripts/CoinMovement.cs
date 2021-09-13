@@ -14,6 +14,7 @@ public class CoinMovement : MonoBehaviour
     private GameObject coinEffect;
     [SerializeField]
     private GameObject coinEffect2;
+    public int reqCoins;
     public static CoinMovement instance;
     private void Awake()
     {
@@ -43,7 +44,7 @@ public class CoinMovement : MonoBehaviour
         {
             Instantiate(coinEffect, transform.position, Quaternion.identity);
             UIManager.instance.coinCount++;
-            if(UIManager.instance.coinCount==5)
+            if(UIManager.instance.coinCount==reqCoins)
             {
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {

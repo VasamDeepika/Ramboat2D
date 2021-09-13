@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float jumpVelocity;
     [SerializeField]
-    private GameObject levelDialogBox; // Game end panel
+    private GameObject levelDialogBox; // GameEnd panel
     [SerializeField]
     private float moveSpeed; // player movement speed
 

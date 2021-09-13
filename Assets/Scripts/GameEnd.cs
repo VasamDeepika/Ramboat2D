@@ -24,7 +24,7 @@ public class GameEnd : MonoBehaviour
     void Update()
     {
         timer = timer + Time.deltaTime;
-        if(timer>50.0f && Health.instance.isGameOver == false)
+        if(timer>30.0f && Health.instance.isGameOver == false)
         {
             flag.gameObject.SetActive(true);
             flagCame = true;

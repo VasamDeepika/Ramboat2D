@@ -657,6 +657,7 @@ MonoBehaviour:
   coinPrefab: {fileID: 4533985418384462577, guid: 050dad3561ade934fb4aef56f6370965, type: 3}
   stars: 0
   diedEnemies: 0
+  reqDiedEnemies: 20
 --- !u!114 &222015573
 MonoBehaviour:
   m_ObjectHideFlags: 0

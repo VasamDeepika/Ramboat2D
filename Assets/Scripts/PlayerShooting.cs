@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerShooting : MonoBehaviour
 {
     public Transform firePoint; // point where ray is coming from
-    public Transform firePoint2; // rotated enply game object for bullet animation
+    public Transform firePoint2; // rotated empty game object for bullet animation
 
     public GameObject enemyDeathEffect;
     public GameObject enemyDeathEffect2;
@@ -17,6 +17,7 @@ public class PlayerShooting : MonoBehaviour
     int damage = 1;
     public int stars = 0;
     public int diedEnemies = 0;
+    public int reqDiedEnemies;
     
     public static PlayerShooting instance;
 
@@ -53,7 +54,7 @@ public class PlayerShooting : MonoBehaviour
                     Instantiate(enemyDeathEffect, hit.point + new Vector2(0, 1), Quaternion.identity);
                     
                     diedEnemies++;
-                    if(diedEnemies==20 && SceneManager.GetActiveScene().buildIndex == 3) 
+                    if(diedEnemies==reqDiedEnemies && SceneManager.GetActiveScene().buildIndex == 3) 
                     {
                         stars++;
                     }
