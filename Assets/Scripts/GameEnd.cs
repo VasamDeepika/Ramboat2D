@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameEnd : MonoBehaviour
 {
     float timer=0;
-    public GameObject flag;
+    [SerializeField]
+    private GameObject flag;
     public static GameEnd instance;
     Animator anim;
     public bool flagCame = false;

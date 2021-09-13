@@ -6,11 +6,12 @@ public class BombMovement : MonoBehaviour
 {
     // Movement speed
     [SerializeField]
-    Rigidbody2D rb;
     int damage=1;
     public static BombMovement instance;
-    public GameObject bombFailEffect;
+    [SerializeField]
+    private GameObject bombFailEffect;
     public bool isGameOver = false;
+    Rigidbody2D rb;
     private void Awake()
     {
         instance = this;

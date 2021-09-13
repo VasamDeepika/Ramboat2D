@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class EnemyMovement : MonoBehaviour
 {
     // Movement speed
-    public float speed = 5;
+    [SerializeField]
+    private float speed = 5;
 
     Rigidbody2D rb;
 

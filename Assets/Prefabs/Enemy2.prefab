@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAllEnemiesKilled: 1
-  WrongMark: {fileID: 0}
+  canHeliShoot: 1
 --- !u!114 &9114042686256833481
 MonoBehaviour:
   m_ObjectHideFlags: 0

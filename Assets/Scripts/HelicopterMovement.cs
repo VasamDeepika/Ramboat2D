@@ -5,10 +5,13 @@ using UnityEngine;
 public class HelicopterMovement : MonoBehaviour
 {
     // Movement speed
-    public float speed = 5;
+    [SerializeField]
+    private float speed = 5;
     private float time;
-    public float timer;
-    public GameObject bombPrefab;
+    [SerializeField]
+    private float timer;
+    [SerializeField]
+    private GameObject bombPrefab;
     Rigidbody2D rb;
 
     void Start()

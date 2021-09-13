@@ -6,16 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D playerRB;
     [SerializeField]
     private float jumpVelocity;
-    private bool grounded = true;
     [SerializeField]
-    private float moveSpeed;
-    public static PlayerMovement instance;
-    public bool gameSuccess = false;
+    private GameObject levelDialogBox; // Game end panel
+    [SerializeField]
+    private float moveSpeed; // player movement speed
+
+    private bool grounded = true;
+    public bool gameSuccess = false; // if player reaches destination
     Animator anim;
-    public GameObject levelDialogBox;
+    Rigidbody2D playerRB;
+    public static PlayerMovement instance;
+
     private void Awake()
     {
         instance = this;
@@ -49,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
+                // if no key is pressed player moves
+                // backward with 1/4 of movement speed
                 playerRB.velocity = new Vector2(-(moveSpeed / 4), 0);
             }
         }
@@ -64,25 +69,25 @@ public class PlayerMovement : MonoBehaviour
         {
             gameSuccess = true;
             
-            if (SceneManager.GetActiveScene().buildIndex == 3)
+            if (SceneManager.GetActiveScene().buildIndex == 3) // level 1
             {
                 PlayerShooting.instance.stars++;
             }
-            else if (SceneManager.GetActiveScene().buildIndex == 4)
+            else if (SceneManager.GetActiveScene().buildIndex == 4) // level 2
             {
                 PlayerShooting.instance.stars = 2;
                 PlayerShooting.instance.stars++;
-                if (KillAllEnemies.instance.isAllEnemiesKilled == false)
+                if (KillAllEnemies.instance.isAllEnemiesKilled == false) // if any enemy escapes one star decremented
                 {
                     PlayerShooting.instance.stars--;
                 }
-                if (Health.instance.currentHealth < 3)
+                if (Health.instance.currentHealth < 3) // if player gets hit by enemy star decremented
                 {
                     PlayerShooting.instance.stars--;
                 }
             }
-            anim.SetTrigger("Win");
-            levelDialogBox.SetActive(true);
+            anim.SetTrigger("Win"); // when player reaches flag(destination) win animation plays
+            levelDialogBox.SetActive(true); // end screen panel
         }
     }
 }

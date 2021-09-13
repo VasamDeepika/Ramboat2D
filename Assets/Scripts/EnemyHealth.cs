@@ -8,11 +8,12 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     int startHealth = 5;
     [SerializeField]
-    public int currentHealth;
-    public static EnemyHealth instance;
+    private GameObject playerdeathEffect;
     Animator anim;
+    public int currentHealth;
     public bool isGameOver = false;
-    public GameObject playerdeathEffect;
+    public static EnemyHealth instance;
+
     private void OnEnable()
     {
         currentHealth = startHealth;

@@ -5,7 +5,8 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
     Rigidbody2D bulletRb;
-    public int bulletSpeed;
+    [SerializeField]
+    private int bulletSpeed;
     // Start is called before the first frame update
     void Start()
     {

@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class FadeInTransition : MonoBehaviour
 {
-    public float fadeInTime;
+    [SerializeField]
+    private float fadeInTime;
     Image fadePanel;
     Color currentColor = Color.black;
     // Start is called before the first frame update

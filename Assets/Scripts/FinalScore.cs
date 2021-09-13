@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class FinalScore : MonoBehaviour
 {
-    public Text coinText;
+    [SerializeField]
+    private Text coinText;
     // Start is called before the first frame update
     void Start()
     {

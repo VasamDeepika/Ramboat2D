@@ -6,7 +6,6 @@ public class KillAllEnemies : MonoBehaviour
 {
     public static KillAllEnemies instance;
     public bool isAllEnemiesKilled = true;
-    
     private void Awake()
     {
         instance = this;
@@ -20,7 +19,7 @@ public class KillAllEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

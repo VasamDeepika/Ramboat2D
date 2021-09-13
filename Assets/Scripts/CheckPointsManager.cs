@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CheckPointsManager : MonoBehaviour
 {
-    public GameObject[] checkPoints;
+    [SerializeField]
+    private GameObject[] checkPoints;
     // Start is called before the first frame update
     void Start()
     {

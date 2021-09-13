@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAllEnemiesKilled: 1
-  WrongMark: {fileID: 0}
+  canHeliShoot: 0
 --- !u!114 &6541131388114143920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,5 +175,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 1
   currentHealth: 0
-  isGameOver: 0
+  isGameOver: 1
   playerdeathEffect: {fileID: 5489635335849643263, guid: 9e46102c9c7df624fa523cbedfd94f0f, type: 3}

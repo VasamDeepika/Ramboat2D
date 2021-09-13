@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class StarsHandler : MonoBehaviour
 {
-    public GameObject[] starsList;
+    [SerializeField]
+    private GameObject[] starsList;
     private void Start()
     {
         

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EffectDestriy : MonoBehaviour
 {
-    public float time;
+    [SerializeField]
+    private float time;
     float timer = 0;
 
     // Update is called once per frame
@@ -12,7 +13,7 @@ public class EffectDestriy : MonoBehaviour
     {
         timer = timer + Time.deltaTime;
 
-        if (timer > 0.2f)
+        if (timer > time)
         {
             Destroy(this.gameObject);
             timer = 0;
