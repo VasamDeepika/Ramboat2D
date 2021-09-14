@@ -33,35 +33,45 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.UpArrow))
-            {
-                if (grounded)
-                {
-                    Jump();
-                }
-            }*/
         
-        if (gameSuccess == false && Health.instance.isGameOver == false)
+        if (gameSuccess == false && Health.instance.isGameOver == false && Conversation.instance.isDialogueOver == true)
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 if (grounded == true)
                 {
                     playerRB.velocity = new Vector2(moveSpeed, 0);
+                    anim.SetTrigger("Run");
                 }
             }
-            else
+            /*else if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                if (grounded)
+                {
+                    print(grounded);
+                    Jump();
+                }
+            }*/
+            else            {
                 // if no key is pressed player moves
                 // backward with 1/4 of movement speed
                 playerRB.velocity = new Vector2(-(moveSpeed / 4), 0);
             }
+            
+            
         }
     }   
     private void Jump()
     {
         grounded = false;
         playerRB.velocity = new Vector2(0, jumpVelocity);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag=="Ground")
+        {
+            grounded = true;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

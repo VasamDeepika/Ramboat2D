@@ -1,0 +1,76 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Conversation : MonoBehaviour
+{
+    public Text textComponent;
+    public string[] lines; // array of sentences in the conversation
+    private int index; // for referring the sentences in the lines array
+    public float textSpeed; // the speed at which each character in a sentence should appear on screen
+    public bool isDialogueOver = false;
+    public static Conversation instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    void Start()
+    {
+        textComponent.text = string.Empty; 
+        StartDialogue();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            if(textComponent.text == lines[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
+        }
+    }
+    void StartDialogue()
+    {
+        index = 0;
+        StartCoroutine(TypeLine());
+    }
+
+    IEnumerator TypeLine()
+    {
+        
+        //display each character one by one with some speed
+        foreach(char c in lines[index].ToCharArray()) // makes array into charater array
+        {
+            textComponent.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+    }
+    void NextLine()
+    {
+        /*
+         * displaying a line in the lines array
+         * if no line is remaning then disable the conversation panel
+         */
+        if(index<lines.Length-1)
+        {
+            index++;
+            textComponent.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            isDialogueOver = true;
+        }
+    }
+}

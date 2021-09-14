@@ -2679,9 +2679,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - prefab: {fileID: 749602949560585603, guid: 078b33cb20be6bc4e996756c3b3c52bc, type: 3}
+  - prefab: {fileID: 1382076656525953805, guid: 078b33cb20be6bc4e996756c3b3c52bc, type: 3}
     amount: 1
-  - prefab: {fileID: 4467326157786813338, guid: eb7bd0219821e024e8ee7891324ed8d0, type: 3}
+  - prefab: {fileID: 595518044414959195, guid: eb7bd0219821e024e8ee7891324ed8d0, type: 3}
     amount: 1
   - prefab: {fileID: 8464737832375177024, guid: 582c75fcb95196142b9a52291c5cb04a, type: 3}
     amount: 1
@@ -2980,7 +2980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1383106679
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3905,7 +3905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level1
+  m_Text: Level2
 --- !u!222 &2035404902
 CanvasRenderer:
   m_ObjectHideFlags: 0

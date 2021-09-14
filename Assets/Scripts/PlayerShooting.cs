@@ -28,7 +28,7 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Health.instance.isGameOver == false)//player can't shoot after death
+        if (Input.GetButtonDown("Fire1") && Health.instance.isGameOver == false && Conversation.instance.isDialogueOver == true)//player can't shoot after death
         {
             Shoot();
         }

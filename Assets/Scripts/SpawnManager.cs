@@ -11,7 +11,8 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerMovement.instance.gameSuccess == false && GameEnd.instance.flagCame == false)
+        if (PlayerMovement.instance.gameSuccess == false && GameEnd.instance.flagCame == false
+            && Conversation.instance.isDialogueOver == true)
         {
             if (Health.instance.isGameOver == false)
             {

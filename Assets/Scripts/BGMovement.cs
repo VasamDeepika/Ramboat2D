@@ -16,7 +16,7 @@ public class BGMovement : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (PlayerMovement.instance.gameSuccess == false && 
+        if (PlayerMovement.instance.gameSuccess == false && Conversation.instance.isDialogueOver == true &&
             GameEnd.instance.flagCame == false&& Health.instance.isGameOver==false)
         {
             bgMat.mainTextureOffset = new Vector2(xOffset * Time.time, 0);

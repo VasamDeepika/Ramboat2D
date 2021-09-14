@@ -23,11 +23,14 @@ public class GameEnd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer = timer + Time.deltaTime;
-        if(timer>30.0f && Health.instance.isGameOver == false)
+        if (Conversation.instance.isDialogueOver == true)
         {
-            flag.gameObject.SetActive(true);
-            flagCame = true;
+            timer = timer + Time.deltaTime;
+            if (timer > 30.0f && Health.instance.isGameOver == false)
+            {
+                flag.gameObject.SetActive(true);
+                flagCame = true;
+            }
         }
     }
 }
