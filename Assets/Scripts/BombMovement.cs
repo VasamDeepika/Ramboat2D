@@ -49,12 +49,8 @@ public class BombMovement : MonoBehaviour
             if(health.currentHealth<=0)
             {
                 Health.instance.isGameOver = true;
-                
+                TotalCoins.instance.SetData();
             }
-        }
-        if (collision.gameObject.tag == "LeftBorder")
-        {
-            GetComponent<CircleCollider2D>().isTrigger = true;
         }
     }
     private void OnBecameInvisible()

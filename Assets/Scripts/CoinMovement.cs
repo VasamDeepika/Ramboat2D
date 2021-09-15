@@ -44,6 +44,7 @@ public class CoinMovement : MonoBehaviour
         {
             Instantiate(coinEffect, transform.position, Quaternion.identity);
             UIManager.instance.coinCount++;
+            TotalCoins.instance.allCoins += 1;
             if(UIManager.instance.coinCount==reqCoins)
             {
                 if (SceneManager.GetActiveScene().buildIndex == 3)

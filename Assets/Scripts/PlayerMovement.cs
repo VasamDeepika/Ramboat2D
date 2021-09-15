@@ -57,8 +57,6 @@ public class PlayerMovement : MonoBehaviour
                 // backward with 1/4 of movement speed
                 playerRB.velocity = new Vector2(-(moveSpeed / 4), 0);
             }
-            
-            
         }
     }   
     private void Jump()
@@ -91,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     PlayerShooting.instance.stars--;
                 }
-                if (Health.instance.currentHealth < 3) // if player gets hit by enemy star decremented
+                if (Health.instance.currentHealth <3) // if player gets hit by enemy star decremented
                 {
                     PlayerShooting.instance.stars--;
                 }

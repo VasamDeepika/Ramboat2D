@@ -30,6 +30,7 @@ public class GameEnd : MonoBehaviour
             {
                 flag.gameObject.SetActive(true);
                 flagCame = true;
+                TotalCoins.instance.SetData();
             }
         }
     }
