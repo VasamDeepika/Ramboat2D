@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         if (PlayerMovement.instance.gameSuccess == false && GameEnd.instance.flagCame == false
-            && Conversation.instance.isDialogueOver == true)
+            && Conversation.instance.isDialogueOver == true && PlayerMovement.instance.isPlayerMoving == true)
         {
             if (Health.instance.isGameOver == false)
             {

@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool grounded = true;
     public bool gameSuccess = false; // if player reaches destination
+    public bool isPlayerMoving = false;
     Animator anim;
     Rigidbody2D playerRB;
     public static PlayerMovement instance;
@@ -42,20 +43,16 @@ public class PlayerMovement : MonoBehaviour
                 {
                     playerRB.velocity = new Vector2(moveSpeed, 0);
                     anim.SetTrigger("Run");
+                    isPlayerMoving = true;
                 }
             }
-            /*else if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                if (grounded)
-                {
-                    print(grounded);
-                    Jump();
-                }
-            }*/
             else            {
                 // if no key is pressed player moves
                 // backward with 1/4 of movement speed
-                playerRB.velocity = new Vector2(-(moveSpeed / 4), 0);
+                if (GameEnd.instance.flagCame == false && Health.instance.isGameOver == false)
+                {
+                    playerRB.velocity = new Vector2(-(moveSpeed / 4), 0);
+                }
             }
         }
     }   

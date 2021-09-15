@@ -41,16 +41,4 @@ public class TotalCoins : MonoBehaviour
         fs.Close();
         bw.Close();
     }
-    public void GetData()
-    {
-        string filePath = Application.persistentDataPath + "/AllCoins.file";
-        FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate);
-        BinaryReader br = new BinaryReader(fs);
-
-        allCoins = (br.ReadInt32());
-        print(allCoins);
-        fs.Close();
-        br.Close();
-        //allCoins = PlayerPrefs.GetInt("allCoins");
-    }
 }
