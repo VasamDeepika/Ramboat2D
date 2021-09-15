@@ -11,6 +11,7 @@ public class Conversation : MonoBehaviour
     public float textSpeed; // the speed at which each character in a sentence should appear on screen
     public bool isDialogueOver = false;
     public static Conversation instance;
+    public GameObject[] persons;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class Conversation : MonoBehaviour
     {
         textComponent.text = string.Empty; 
         StartDialogue();
+        persons[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -30,6 +32,16 @@ public class Conversation : MonoBehaviour
         {
             if(textComponent.text == lines[index])
             {
+                if(index == 0 || index == 2 || index == 4)
+                {
+                    persons[0].SetActive(false);
+                    persons[1].SetActive(true);
+                }
+                else
+                {
+                    persons[0].SetActive(true);
+                    persons[1].SetActive(false);
+                }
                 NextLine();
             }
             else
