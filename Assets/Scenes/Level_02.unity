@@ -1631,8 +1631,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 557118131
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fbfa09e021a93584cb7fba04b860b01f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2326,6 +2326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 966683663}
+  textSpeed: 0.05
   lines:
   - 'Officer: Mambo! You did exceptionally well in last mission. I am proud of you.'
   - 'Player: Thank you sir!'
@@ -2336,11 +2337,10 @@ MonoBehaviour:
     this mission without getting hurt.'
   - 'Player: Okay Officer! Now let me go and kill those monsters.'
   - 'Officer: Okay! Good luck Mambo!'
-  textSpeed: 0.05
-  isDialogueOver: 0
   persons:
   - {fileID: 355225395}
   - {fileID: 1928928687}
+  isDialogueOver: 0
 --- !u!114 &999865793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3561,7 +3561,6 @@ MonoBehaviour:
   - {fileID: 625513532}
   - {fileID: 115596030}
   - {fileID: 1464887488}
-  playerHealth: 0
 --- !u!4 &1471333943
 Transform:
   m_ObjectHideFlags: 0

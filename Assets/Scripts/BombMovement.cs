@@ -5,15 +5,14 @@ using UnityEngine;
 public class BombMovement : MonoBehaviour
 {
     // Movement speed
-    [SerializeField]
-    int damage=1;
-    public static BombMovement instance;
+    int damage = 1;
     [SerializeField]
     private GameObject bombFailEffect;
     [SerializeField]
     private GameObject bombFailEffect1;
     public bool isGameOver = false;
     Rigidbody2D rb;
+    public static BombMovement instance;
     private void Awake()
     {
         instance = this;
@@ -37,7 +36,7 @@ public class BombMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player")
         {
-            Instantiate(bombFailEffect1, transform.position + new Vector3(0,-1,0), Quaternion.identity);
+            Instantiate(bombFailEffect1, transform.position + new Vector3(0, -1, 0), Quaternion.identity);
             FindObjectOfType<AudioManager>().PlayAudio("FailExplosion");
             Destroy(gameObject);
 
@@ -46,7 +45,7 @@ public class BombMovement : MonoBehaviour
             {
                 health.TakeDamage(damage);
             }
-            if(health.currentHealth<=0)
+            if (health.currentHealth <= 0)
             {
                 Health.instance.isGameOver = true;
                 TotalCoins.instance.SetData();

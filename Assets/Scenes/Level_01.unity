@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1806707295}
+  textSpeed: 0.05
   lines:
   - 'Officer: Hello Mambo! Welcome to the team.'
   - 'Player: Hi Officer! Nice to meet you.'
@@ -446,11 +447,10 @@ MonoBehaviour:
   - 'Officer: Okay then try to kill 20 enemies and collect five coins in your way
     before reaching our office.'
   - 'Player: Sounds interesting to me. I''m in Officer!!!'
-  textSpeed: 0.05
-  isDialogueOver: 0
   persons:
   - {fileID: 420355142}
   - {fileID: 1710755279}
+  isDialogueOver: 0
 --- !u!1 &169674641
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222015565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.31, y: -2.12, z: 0}
+  m_LocalPosition: {x: -7.31, y: 3.58, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1794481266}
@@ -1877,8 +1877,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 557118131
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fbfa09e021a93584cb7fba04b860b01f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3332,7 +3332,6 @@ MonoBehaviour:
   - {fileID: 625513532}
   - {fileID: 115596030}
   - {fileID: 1464887488}
-  playerHealth: 0
 --- !u!4 &1471333943
 Transform:
   m_ObjectHideFlags: 0

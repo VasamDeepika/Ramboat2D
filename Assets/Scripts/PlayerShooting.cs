@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public Transform firePoint; // point where ray is coming from
-    public Transform firePoint2; // rotated empty game object for bullet animation
+    [SerializeField] public Transform firePoint; // point where ray is coming from
+    [SerializeField] public Transform firePoint2; // rotated empty game object for bullet animation
 
-    public GameObject enemyDeathEffect;
-    public GameObject enemyDeathEffect2;
-    public GameObject bulletPrefab;
-    public GameObject coinPrefab;
+    [SerializeField] public GameObject enemyDeathEffect;
+    [SerializeField] public GameObject enemyDeathEffect2;
+    [SerializeField] public GameObject bulletPrefab;
+    [SerializeField] public GameObject coinPrefab;
 
     int damage = 1;
     public int stars = 0;
     public int diedEnemies = 0;
-    public int reqDiedEnemies;
+    [SerializeField] public int reqDiedEnemies;
     
     public static PlayerShooting instance;
 
@@ -27,8 +27,9 @@ public class PlayerShooting : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetButtonDown("Fire1") && Health.instance.isGameOver == false && Conversation.instance.isDialogueOver == true)//player can't shoot after death
+    { 
+        if (Input.GetButtonDown("Fire1") && Health.instance.isGameOver == false && PlayerMovement.instance.isPlayerMoving == true
+            && Conversation.instance.isDialogueOver == true)//player can't shoot after death
         {
             Shoot();
         }

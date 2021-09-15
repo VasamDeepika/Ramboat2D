@@ -17,7 +17,7 @@ public class BGMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (PlayerMovement.instance.gameSuccess == false && Conversation.instance.isDialogueOver == true &&
-            GameEnd.instance.flagCame == false&& Health.instance.isGameOver==false && PlayerMovement.instance.isPlayerMoving == true)
+            GameEnd.instance.flagCame == false && Health.instance.isGameOver == false && PlayerMovement.instance.isPlayerMoving == true)
         {
             bgMat.mainTextureOffset = new Vector2(xOffset * Time.time, 0);
         }

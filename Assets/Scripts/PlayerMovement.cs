@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (gameSuccess == false && Health.instance.isGameOver == false && Conversation.instance.isDialogueOver == true)
         {
             if (Input.GetKey(KeyCode.RightArrow))
@@ -46,7 +46,8 @@ public class PlayerMovement : MonoBehaviour
                     isPlayerMoving = true;
                 }
             }
-            else            {
+            else
+            {
                 // if no key is pressed player moves
                 // backward with 1/4 of movement speed
                 if (GameEnd.instance.flagCame == false && Health.instance.isGameOver == false)
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-    }   
+    }
     private void Jump()
     {
         grounded = false;
@@ -63,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             grounded = true;
         }
@@ -73,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Flag")
         {
             gameSuccess = true;
-            
+
             if (SceneManager.GetActiveScene().buildIndex == 3) // level 1
             {
                 PlayerShooting.instance.stars++;
@@ -86,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     PlayerShooting.instance.stars--;
                 }
-                if (Health.instance.currentHealth <3) // if player gets hit by enemy star decremented
+                if (Health.instance.currentHealth < 3) // if player gets hit by enemy star decremented
                 {
                     PlayerShooting.instance.stars--;
                 }

@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        if(PlayerMovement.instance.gameSuccess == true)
+        if (PlayerMovement.instance.gameSuccess == true)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

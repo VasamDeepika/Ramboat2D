@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TotalCoins : MonoBehaviour
 {
-    public int allCoins=0;
+    [SerializeField] public int allCoins=0;
     public static TotalCoins instance;
     private void Awake()
     {

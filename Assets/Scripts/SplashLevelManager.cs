@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SplashLevelManager : MonoBehaviour
 {
-    public float loadLevelTimer;
+    [SerializeField]
+    private float loadLevelTimer;
     private void Start()
     {
         Invoke("LoadNextLevel", loadLevelTimer);

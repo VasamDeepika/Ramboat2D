@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class Conversation : MonoBehaviour
 {
-    public Text textComponent;
-    public string[] lines; // array of sentences in the conversation
+    [SerializeField]
+    private Text textComponent;
+    [SerializeField]
+    private float textSpeed; // the speed at which each character in a sentence should appear on screen
+    [SerializeField]
+    private string[] lines; // array of sentences in the conversation
+    [SerializeField]
+    private GameObject[] persons;
     private int index; // for referring the sentences in the lines array
-    public float textSpeed; // the speed at which each character in a sentence should appear on screen
-    public bool isDialogueOver = false;
     public static Conversation instance;
-    public GameObject[] persons;
+    public bool isDialogueOver;
+    
 
     private void Awake()
     {

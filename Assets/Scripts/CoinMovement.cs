@@ -8,13 +8,13 @@ public class CoinMovement : MonoBehaviour
     // Movement speed
     [SerializeField]
     private float speed = 5;
-    bool hitGround = false;
-    Rigidbody2D rb;
     [SerializeField]
     private GameObject coinEffect;
     [SerializeField]
     private GameObject coinEffect2;
     public int reqCoins;
+    bool hitGround = false;
+    Rigidbody2D rb;
     public static CoinMovement instance;
     private void Awake()
     {

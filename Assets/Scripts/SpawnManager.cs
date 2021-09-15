@@ -32,16 +32,6 @@ public class SpawnManager : MonoBehaviour
                             en.SetActive(true);
                         }
                     }
-                    GameObject enRun = Pool.instance.Get("RunningEnemy");
-                    if (enRun != null)
-                    {
-                        enRun.transform.position = new Vector3(8,2.2f, 0);
-                        if (timerRun > 2f) // 2 seconds of time gap between each enemy
-                        {
-                            timerRun = 0;
-                            enRun.SetActive(true);
-                        }
-                    }
                     GameObject helicoptor = Pool.instance.Get("Helicopter");
                     if (helicoptor != null)
                     {

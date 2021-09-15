@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class PauseAndPlay : MonoBehaviour
 {
     Image img;
-    public Sprite playSprite;
-    public Sprite pausedSprite;
+    [SerializeField]
+    private Sprite playSprite;
+    [SerializeField]
+    private Sprite pausedSprite;
     private void Start()
     {
         img = GetComponent<Image>();
