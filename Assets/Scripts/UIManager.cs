@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Text enemyCountText;
-    public Text coinCountText;
+    [SerializeField] public Text enemyCountText;
+    [SerializeField] public Text coinCountText;
     public int coinCount = 0;
     public static UIManager instance;
     private void Awake()
