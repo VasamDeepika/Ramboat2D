@@ -20,6 +20,6 @@ public class FinalScore : MonoBehaviour
     void Update()
     {
         coinText.text = UIManager.instance.coinCount.ToString();
-        
+        allCoinsText.text = TotalCoins.instance.allCoins.ToString();
     }
 }

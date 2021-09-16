@@ -37,7 +37,7 @@ public class Conversation : MonoBehaviour
         {
             if(textComponent.text == lines[index])
             {
-                if(index == 0 || index == 2 || index == 4)
+                if(index%2 == 0)
                 {
                     persons[0].SetActive(false);
                     persons[1].SetActive(true);
