@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class FinalScore : MonoBehaviour
+public class AllCoins : MonoBehaviour
 {
     [SerializeField]
-    private Text coinText;
-    [SerializeField]
     private Text allCoinsText;
+    int coin = 1;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        coinText.text = UIManager.instance.coinCount.ToString();
-        
+        allCoinsText.text = TotalCoins.instance.allCoins.ToString();
     }
 }

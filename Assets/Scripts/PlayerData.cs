@@ -29,7 +29,6 @@ public class PlayerData : MonoBehaviour
         string path = Application.persistentDataPath + "/PlayerData.file";
         FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
         BinaryWriter bw = new BinaryWriter(fs);
-        print("\n");
         bw.Write(playerName);
         bw.Write("Player Gender : " + gender);
 
