@@ -8,8 +8,13 @@ public class OptionsManager : MonoBehaviour
 {
     public Slider volumeSlider;
     public Slider difficultySlider;
+    public static OptionsManager instance;
 
     private AudioManager audioManager;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
