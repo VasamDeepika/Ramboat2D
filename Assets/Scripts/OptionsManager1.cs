@@ -7,29 +7,22 @@ public class OptionsManager1 : MonoBehaviour
 {
     public GameObject HomeScreen;
     public GameObject HelpMenu;
+    public GameObject welcomePnel;
     public void start()
     {
         SceneManager.LoadScene(2);
     }
-    public void Home()
-    {
-        HomeScreen.SetActive(true);
-        HelpMenu.SetActive(false);
-    }
-    public void HomeMenu()
-    {
-        HomeScreen.SetActive(true);
-        HelpMenu.SetActive(false);
-    }
     public void OptionScreen()
     {
-        HomeScreen.SetActive(false);
+        HomeScreen.SetActive(true);
+        welcomePnel.SetActive(true);
         HelpMenu.SetActive(false);
     }
     public void HelpScreen()
     {
         HomeScreen.SetActive(false);
         HelpMenu.SetActive(true);
+        welcomePnel.SetActive(false);
     }
 
 }
