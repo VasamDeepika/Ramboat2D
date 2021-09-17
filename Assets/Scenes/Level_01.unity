@@ -3840,6 +3840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48bbf7f2f93ed54c810e69b0b01ab4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficultyTimer: 0
 --- !u!1001 &1794481265
 PrefabInstance:
   m_ObjectHideFlags: 0
