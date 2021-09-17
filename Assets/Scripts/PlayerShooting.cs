@@ -10,7 +10,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] public Transform firePoint2; // rotated empty game object for bullet animation
 
     [SerializeField] public GameObject enemyDeathEffect;
-    [SerializeField] public GameObject enemyDeathEffect2;
+    [SerializeField] public ParticleSystem enemyDeathEffect2;
     [SerializeField] public GameObject bulletPrefab;
     [SerializeField] public GameObject coinPrefab;
 

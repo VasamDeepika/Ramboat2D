@@ -2263,7 +2263,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &966683664
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3772,6 +3772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48bbf7f2f93ed54c810e69b0b01ab4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficultyTimer: 0
 --- !u!1 &1887889342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4249,6 +4250,10 @@ PrefabInstance:
       propertyPath: levelDialogBox
       value: 
       objectReference: {fileID: 1383106678}
+    - target: {fileID: 2112830330537738086, guid: bba873e85af3ff747ac2062fde2119c9, type: 3}
+      propertyPath: enemyDeathEffect2
+      value: 
+      objectReference: {fileID: 19826942, guid: 87bcaf94eccd2ad47af5b6c1dd9c1afe, type: 3}
     - target: {fileID: 2112830330537738087, guid: bba873e85af3ff747ac2062fde2119c9, type: 3}
       propertyPath: gameOverPanel
       value: 

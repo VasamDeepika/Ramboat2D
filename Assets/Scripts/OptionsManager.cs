@@ -33,6 +33,6 @@ public class OptionsManager : MonoBehaviour
     public void SetDefaults()
     {
         volumeSlider.value = 0.5f;
-        difficultySlider.value = 0.5f;
+        difficultySlider.value = 1.0f;
     }
 }

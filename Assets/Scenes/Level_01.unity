@@ -715,7 +715,7 @@ MonoBehaviour:
   firePoint: {fileID: 915701299}
   firePoint2: {fileID: 1433044799}
   enemyDeathEffect: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
-  enemyDeathEffect2: {fileID: 5658150135796530580, guid: 78c4c69d9c1d2b749bded35d49a0bda3, type: 3}
+  enemyDeathEffect2: {fileID: 19811986, guid: fbcc67b8e1f388e4abe198354a3ef57f, type: 3}
   bulletPrefab: {fileID: 2659424284033365257, guid: 892584d40b53167469ef3a084ca0eb44, type: 3}
   coinPrefab: {fileID: 4533985418384462577, guid: 050dad3561ade934fb4aef56f6370965, type: 3}
   stars: 0

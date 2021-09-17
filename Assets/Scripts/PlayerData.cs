@@ -41,7 +41,7 @@ public class PlayerData : MonoBehaviour
         FileStream fs = new FileStream(path, FileMode.Open);
         BinaryReader br = new BinaryReader(fs);
         playerName = br.ReadString();
-        playerNameText.text = "Welcome to the mission!"+"\n" +playerName.ToString();
+        playerNameText.text = playerName.ToString();
         playerNamePanel.SetActive(true);
         br.Close();
         fs.Close();
