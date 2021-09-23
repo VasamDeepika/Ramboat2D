@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject falseConverstion;
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -31,5 +33,7 @@ public class LevelManager : MonoBehaviour
     public void LoadTHisLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        falseConverstion.SetActive(false);
+        
     }
 }

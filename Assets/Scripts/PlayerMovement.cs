@@ -54,6 +54,10 @@ public class PlayerMovement : MonoBehaviour
                 {
                     playerRB.velocity = new Vector2(-(moveSpeed / 4), 0);
                 }
+                else
+                {
+                    playerRB.velocity = new Vector2((moveSpeed / 4), 0);
+                }
             }
         }
     }
